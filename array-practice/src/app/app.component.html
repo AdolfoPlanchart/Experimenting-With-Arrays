@@ -1,0 +1,28 @@
+<h1>{{ title }}</h1>
+
+<div>
+
+  <app-form (update)="push($event)" class="form"></app-form>
+
+  <button (click)="clear()">Borrar metas</button>
+
+</div>
+
+<div>
+
+  <h2>{{ array.nullError }}</h2>
+
+  <ol>
+
+    <li *ngFor="let items of array.newArray">
+    
+      {{ items }}
+    
+      <button (click)="cut($index)">Eliminar meta</button>
+
+    </li>
+
+  </ol>
+
+</div>
+<router-outlet></router-outlet>
